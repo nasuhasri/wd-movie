@@ -8,7 +8,7 @@ file_path = os.path.join('dataset', 'data-viz14.pkl')
 
 if os.path.exists(file_path):
     
-    df = pd.DataFrame(pd.read_pickle(r'dataset\data-viz14.pkl'))
+    df = pd.DataFrame(pd.read_pickle(file_path))
 
     # get movies data
     df_movies = df[df['titleType'] == 'movie']
