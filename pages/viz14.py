@@ -7,7 +7,6 @@ st.write("Distribution of movie and tv series by year")
 file_path = os.path.join('dataset', 'data-viz14.pkl')
 
 if os.path.exists(file_path):
-    
     df = pd.DataFrame(pd.read_pickle(file_path))
 
     # get movies data
