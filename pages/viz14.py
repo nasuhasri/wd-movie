@@ -7,12 +7,10 @@ st.write("Distribution of movie and tv series by year")
 
 df = pd.DataFrame(pd.read_pickle(r'dataset\data-viz14.pkl'))
 
-# st.write(df)
-
+# get movies data
 df_movies = df[df['titleType'] == 'movie']
+# get series data
 df_tvSeries = df[df['titleType'] == 'tvSeries']
-
-movies_per_year = df_movies['startYear'].value_counts().sort_index()
 
 chart_data = pd.DataFrame({
     "Year": df['startYear'],
@@ -20,6 +18,5 @@ chart_data = pd.DataFrame({
     "TV Series": df_tvSeries['primaryTitle']
 })
 
+# draw chart
 st.bar_chart(chart_data, x="Year", y=["Movies", "TV Series"], x_label='Released Year', y_label='Number of Movies and Series Titles')
-
-# st.bar_chart(data=df, x=None, y=df['primaryTitle'], x_label='Released Year', y_label='Number of Movies and Series Titles', color=None, horizontal=False, width=None, height=None, use_container_width=True)
